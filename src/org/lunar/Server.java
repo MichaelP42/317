@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
+import org.lunar.rs2.network.PipelineFactory;
 import org.lunar.utility.ExceptionLogger;
 
 /**
@@ -48,7 +49,7 @@ public class Server {
 			int port = Integer.parseInt(strings[0]);
 			NioServerSocketChannelFactory factory = new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool());
 			ServerBootstrap bootstrap = new ServerBootstrap(factory);
-			bootstrap.setPipelineFactory(null);
+			bootstrap.setPipelineFactory(new PipelineFactory());
 			bootstrap.bind(new InetSocketAddress(port));
 			
 			// Power the engine.
