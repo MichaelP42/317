@@ -1,7 +1,7 @@
 package org.lunar.rs2.game;
 
 import org.lunar.rs2.game.mob.player.Player;
-import org.lunar.rs2.game.utility.MobContainer;
+import org.lunar.rs2.utility.MobContainer;
 import org.lunar.task.Task;
 
 /**

@@ -1,4 +1,4 @@
-package org.lunar.rs2.game.utility;
+package org.lunar.rs2.utility;
 
 import java.util.Collection;
 import java.util.Iterator;
