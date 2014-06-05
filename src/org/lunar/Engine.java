@@ -4,6 +4,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import org.lunar.task.TaskHandler;
+
 /**
  * The main engine of the Lunar server.
  * 
@@ -51,7 +53,7 @@ public final class Engine implements Runnable {
             service.shutdownNow();
             return;
         }
-        // TODO Handle processing.
+        TaskHandler.getInstance().pulse();
     }
 
 }

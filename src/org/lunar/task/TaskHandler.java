@@ -2,6 +2,8 @@ package org.lunar.task;
 
 import java.util.*;
 
+import org.lunar.rs2.game.World;
+
 /**
  * Handles implements of the {@link Task} interface.
  * 
@@ -9,6 +11,11 @@ import java.util.*;
  *
  */
 public class TaskHandler {
+	
+	/**
+	 * The {@link TaskHandler} instance.
+	 */
+	private static final TaskHandler instance = new TaskHandler();
 
 	/**
 	 * A {@link List} of {@link Task} implements.
@@ -19,7 +26,7 @@ public class TaskHandler {
 	 * Adds the default task to the list.
 	 */
 	public void addDefaultTasks() {
-		Task[] defaultTask = new Task[] {};
+		Task[] defaultTask = new Task[] {new World()};
 		for (Task task : defaultTask) {
 			if (task == null)
 				continue;
@@ -37,10 +44,18 @@ public class TaskHandler {
 				$it.remove();
 				continue;
 			}
-			int delay = task.delay();
+			int delay = task.delay() + 1;
 			if (delay-- == 0) {
 				task.execute();
 			}
 		}
+	}
+	
+	/**
+	 * Gets the {@link TaskHandler} instance.
+	 * @return The instance of the {@link TaskHandler} class.
+	 */
+	public static TaskHandler getInstance() {
+		return instance;
 	}
 }
