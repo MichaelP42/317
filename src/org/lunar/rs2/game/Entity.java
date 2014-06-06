@@ -17,6 +17,11 @@ public abstract class Entity {
 	protected Location location;
 	
 	/**
+	 * The index of the entity.
+	 */
+	protected int index = -1;
+	
+	/**
 	 * Sets the entity's location.
 	 * 
 	 * @param location
@@ -27,11 +32,29 @@ public abstract class Entity {
 	}
 	
 	/**
+	 * Sets the entity's index.
+	 * 
+	 * @param index
+	 *            The index to set the entity.
+	 */
+	public void setIndex(int index) {
+		this.index = index;
+	}
+	
+	/**
 	 * Gets the location of the entity.
 	 * @return The entity's location.
 	 */
 	public Location getLocation() {
 		return location;
+	}
+	
+	/**
+	 * Gets the index of the entity.
+	 * @return The entity index.
+	 */
+	public int getIndex() {
+		return index;
 	}
 	
 	/**

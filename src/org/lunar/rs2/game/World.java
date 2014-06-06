@@ -15,6 +15,11 @@ import org.lunar.task.Task;
 public class World implements Task {
 
 	/**
+	 * The world instance.
+	 */
+	public static final World world = new World();
+	
+	/**
 	 * The container of registered {@link Player}s.
 	 */
 	private MobContainer<Player> players = new MobContainer<Player>(2000);
@@ -39,8 +44,22 @@ public class World implements Task {
 	 */
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-		
+		// First handle all queued packets for the player's.
+		for (Player player : players) {
+			player.handlePackets(player);
+		}
+		// Now handle player processing and movement.
+		for (Player player : players) {
+			player.process();
+		}
+		// Handle rendering.
+//		for (Player player : players) {
+//			// TODO Player rendering.
+//		}
+		// Now reset the player.
+		for (Player player : players) {
+			player.reset();
+		}
 	}
 
 	/*
@@ -50,6 +69,14 @@ public class World implements Task {
 	@Override
 	public int delay() {
 		return 0;
+	}
+	
+	/**
+	 * Gets the world instance.
+	 * @return The instance.
+	 */
+	public static World getWorld() {
+		return world;
 	}
 
 }
