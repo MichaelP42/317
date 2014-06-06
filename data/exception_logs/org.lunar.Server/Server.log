@@ -6,3 +6,8 @@ main[Wed Jun 04 23:06:01 EDT 2014] [Ljava.lang.StackTraceElement;@d93b30
 [Wed Jun 04 23:08:30 EDT 2014] org.lunar.Server : main : null
 [Wed Jun 04 23:09:10 EDT 2014] org.lunar.Server : main : null @ line null
 [Wed Jun 04 23:09:52 EDT 2014] org.lunar.Server : main : null @ line 26
+[Thu Jun 05 21:47:32 EDT 2014] org.lunar.Server : main : 0 @ line 49
+[Thu Jun 05 21:49:00 EDT 2014] org.lunar.Server : main : 0 @ line 49
+[Thu Jun 05 21:49:08 EDT 2014] org.lunar.Server : main : 0 @ line 49
+[Thu Jun 05 22:04:45 EDT 2014] org.jboss.netty.bootstrap.ServerBootstrap : bind : Failed to bind to: 0.0.0.0/0.0.0.0:43594 @ line 272
+[Thu Jun 05 22:08:10 EDT 2014] org.jboss.netty.bootstrap.ServerBootstrap : bind : Failed to bind to: 0.0.0.0/0.0.0.0:43594 @ line 272

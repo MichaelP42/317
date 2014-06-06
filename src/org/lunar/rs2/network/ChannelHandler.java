@@ -14,11 +14,6 @@ import org.lunar.utility.ExceptionLogger;
  *
  */
 public class ChannelHandler extends SimpleChannelHandler {
-
-	/**
-	 * The handler's {@link ExceptionLogger}.
-	 */
-	private static final ExceptionLogger exceptionLogger = new ExceptionLogger(new ChannelHandler());
 	
 	/*
 	 * (non-Javadoc)
@@ -50,7 +45,7 @@ public class ChannelHandler extends SimpleChannelHandler {
 	 */
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) {
-		exceptionLogger.logExcpetion((Exception) e);
+		System.err.println("exception happened");
 	}
 	
 }

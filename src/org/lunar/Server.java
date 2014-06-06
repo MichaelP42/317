@@ -51,6 +51,7 @@ public class Server {
 			ServerBootstrap bootstrap = new ServerBootstrap(factory);
 			bootstrap.setPipelineFactory(new PipelineFactory());
 			bootstrap.bind(new InetSocketAddress(port));
+			logger.info("Bootstrap binded to port "+ port +"!");
 			
 			// Power the engine.
 			Engine.power();
